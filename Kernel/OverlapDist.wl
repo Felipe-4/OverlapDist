@@ -316,7 +316,7 @@ TestPlotRange[x___] := Throw[Message[CornerPlot::InvalidPlotRange]]
 
 
 CornerPlot[grid_List, vars_List, {HDI__}, OptionsPattern[]]/;(
-	ArrayQ[grid,_, NumberQ] && MatrixQ@vars && And@@(0<#<=1&/@{HDI})
+	ArrayQ[grid, _, NumberQ] && MatrixQ@vars && And@@(0<#<=1&/@{HDI})
 ) := Module[
 	{CoordinateValues, dim =Length@vars, matrixGrid, hdrs, confidenceIntervals, f, plot, arguments, n\[Sigma]s,
 	marginal, frameLabel, \[CapitalDelta]x, passArguments, arrayDimensions, plotRange
